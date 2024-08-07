@@ -1,0 +1,105 @@
+
+{% extends "template.html" %}
+
+{% block title %}
+    ثبت نام
+{% endblock %}
+
+{% block style %}
+{% endblock %}
+
+
+{% block content %}
+    <div>
+        <div class="row justify-content-center">
+            <div class="form col-4">
+                <h2 class="mb-5 text-center">ثبت نام در سامانه</h2>
+
+                <form action="/signup" method="post" enctype="multipart/form-data">
+{#                    <div class="form-group">#}
+{#                        <label for="roleId">نقش خود را انتخاب کنید </label>#}
+{#                        <select class="form-control" id="roleId" name="role" placeholder="نقش خود را انتخاب کنید">#}
+{#                            <option value="buyer">خریدار</option>#}
+{#                            <option value="seller">فروشنده</option>#}
+{#                            <option value="renter">اجاره کننده</option>#}
+{#                        </select>#}
+{#                    </div>#}
+
+                    <div class="form-group">
+                        <label for="nameId">نام</label>
+                        <input id="nameId" class="form-control" type="text" name="name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="familyId">نام خانوادگی</label>
+                        <input id="familyId" class="form-control" name="family" type="text">
+                    </div>
+
+{#                    <div class="form-group">#}
+{#                        <label>استان</label>#}
+{#                        <input class="form-control" name="state" type="text">#}
+{#                    </div>#}
+
+                    <div class="form-group">
+                        <label for="cityId">شهر</label>
+                        <input id="cityId" class="form-control" name="city" type="text">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="user_idId"> کد ملی </label>
+                        <input id="user_idId" class="form-control" type="text" name="user_id">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phoneId">شماره تلفن</label>
+                        <input id="phoneId" class="form-control" type="text" name="phone">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="emailId"> ایمیل </label>
+                        <input id="emailId" class="form-control" type="text" name="email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="usernameId">نام کاربری</label>
+                        <input id="usernameId" class="form-control" type="text" name="username" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="passwordId">رمز عبور</label>
+                        <input id="passwordId" class="form-control" type="password" name="password" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="birth_dateId"> تاریخ تولد : </label>
+                        <input id="birth_dateId" class="form-control" type="date" name="birth_date">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="genderId">جنسیت</label>
+                        <select id="genderId" class="form-control" name="gender" >
+                            <option value="Male">مرد</option>
+                            <option value="Female">زن</option>
+                        </select>
+
+                    </div>
+                    <div class="form-group">
+                        <label for="addressId">آدرس :</label>
+                        <textarea id="addressId" cols="65" rows="5" name="address"></textarea>
+                    </div>
+                     <div class="form-group">
+                         <label>آپلود عکس</label>
+                         <br>
+                         <input type="file" name="file">
+                     </div>
+
+                    <div class="form-group">
+                        <input class="btn btn-primary" type="submit" value="ذخیره">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+

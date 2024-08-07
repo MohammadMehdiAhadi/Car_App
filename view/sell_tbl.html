@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sell table</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <style>
+        #data-table {
+            width: 60%;
+            margin: auto;
+        }
+
+        textarea {
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+<div id="data-table">
+    <table class="table table-hover table-primary">
+        <thead>
+        <tr>
+            <th>نام ماشین</th>
+            <th>نام برند</th>
+            <th>رنگ</th>
+            <th>شهر</th>
+            <th>سال ساخت</th>
+            <th>قیمت</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        {% for sell in sell_list %}
+            <tr onclick="show_data('aaa')">
+                <td>{{ sell.stuff_id }}</td>
+                <td>mmm</td>
+                <td>lll</td>
+                <td>ooo</td>
+                <td>bbb</td>
+                <td>ttt</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+<div>
+    <label for="address">آدرس</label> <br>
+    <textarea name="address" id="address" cols="30" rows="2"></textarea> <br><br>
+    <label for="description">توضیحات</label> <br>
+    <textarea name="description" id="description" cols="30" rows="2"></textarea>
+</div>
+<script>
+    function show_data(id) {
+        document.getElementById("address").value = "Show Address"
+        document.getElementById("description").value = "Show Description"
+    }
+</script>
+</body>
+</html>

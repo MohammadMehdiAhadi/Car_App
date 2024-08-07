@@ -1,0 +1,97 @@
+{% extends "template.html" %}
+
+{% block title %}
+    ثبت کالا
+{% endblock %}
+
+{% block style %}
+{% endblock %}
+
+
+{% block content %}
+    <div>
+        <div class="row justify-content-center">
+            <div class="form col-4">
+                <h2 class="mb-5 text-center">ثبت کالا</h2>
+                <form action="/stuff" method="post" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="nameId">نام ماشین</label>
+                        <input id="nameId" class="form-control" type="text"   name="car_name"
+                               placeholder="نام ماشین خود را وارد کنید" required>
+                    </div>
+
+                    <div class="form-group  ">
+                        <label for="colorId">رنگ</label>
+                        <select id="colorId" class="form-control" name="color">
+                            <option value="black">مشکی</option>
+                            <option value="white">سفید</option>
+                            <option value="red">قرمز</option>
+                            <option value="gray">طوسی</option>
+                            <option value="blue">آبی</option>
+                            <option value="beige">بژ</option>
+                            <option value="brown">قهوه ای</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group ">
+                        <label for="brandId">نام برند</label>
+                        <input id="brandId" class="form-control" type="text"   name="brand"
+                               placeholder="نام  برند ماشین خود را وارد کنید" required>
+                    </div>
+
+
+                    {#                    <div class="form-group">#}
+                    {#                        <label>شهر</label>#}
+                    {#                        <input class="form-control" name="city" type="text">#}
+                    {#                    </div>#}
+                    <div class="form-group ">
+                        <label for="dateId">سال ساخت</label>
+                        <input id="dateId" class="form-control" type="date"   name="year" required>
+                    </div>
+
+
+                    <div class="form-group ">
+                        <label for="priceId">قیمت</label>
+                        <input id="priceId" class="form-control" type="text"   name="price"
+                               placeholder="قیمت خود را وارد کنید" required>
+                    </div>
+
+                    {#                    <div class="form-group">#}
+                    {#                        <label>آدرس :</label>#}
+                    {#                        <textarea id="infoId" cols="65" rows="5" name="address"></textarea>#}
+                    {#                    </div>#}
+
+                    <div class="form-group ">
+                        <label for="infoId">توضیحات</label>
+                        <br>
+                        <textarea id="infoId" name="information" cols="80" rows="10" placeholder="توضیحات بیشتر"
+                                  required></textarea>
+                        <br>
+                    </div>
+                    <div class="form-group">
+                        <label for="car_imageId">آپلود عکس</label>
+                        <br>
+                        <input id="car_imageId" type="file" name="file">
+                    </div>
+                    <div class="form-group ">
+                        <button class="btn btn-primary" type="submit" id="rentersave">ثبت</button>
+                    </div>
+                    <div class="form-group ">
+                        <br>
+                        {#                                <form id="form">#}
+                        {#                                    <input type="search" id="query" name="q" placeholder="جستجو کنید" &gt;>#}
+                        {#                                    <div class="form-group mt-2">#}
+                        {#                                        <button class="btn btn-primary" type="submit">جستجو</button>#}
+                        <div class="form-group ">
+
+
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+
+            {#                </form>#}
+        </div>
+    </div>
+{% endblock %}

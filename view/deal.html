@@ -1,0 +1,285 @@
+{% extends "template.html" %}
+
+{% block title %}
+    معاملات
+{% endblock %}
+
+{% block style %}
+{% endblock %}
+
+
+{% block content %}
+    <a href="/all-deals">My Deals</a>
+    <div>
+        <div class="row justify-content-center">
+            <div class="form col-4">
+                <h2 class="mb-5 text-center">ثبت معاملات</h2>
+
+                <form action="/deal" method="post" enctype="multipart/form-data">
+                    {#                    <div class="form-group">#}
+                    {#                        <label for="roleId">نقش خود را انتخاب کنید </label>#}
+                    {#                        <select class="form-control" id="roleId" name="role" placeholder="نقش خود را انتخاب کنید">#}
+                    {#                            <option value="buyer">خریدار</option>#}
+                    {#                            <option value="seller">فروشنده</option>#}
+                    {#                            <option value="renter">اجاره کننده</option>#}
+                    {#                        </select>#}
+                    {#                    </div>#}
+
+                    <div class="form-group">
+                        <label for="nameId">نام</label>
+                        <input id="nameId" class="form-control" type="text" name="name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="familyId">نام خانوادگی</label>
+                        <input id="familyId" class="form-control" name="family" type="text">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="genderId">جنسیت</label>
+                        <select id="genderId" class="form-control" name="gender">
+                            <option value="Male">مرد</option>
+                            <option value="Female">زن</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="birth_dateId"> تاریخ تولد </label>
+                        <input type="date" id="birth_dateId" class="form-control" name="birth_date" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="emailId"> ایمیل </label>
+                        <input id="emailId" class="form-control" type="text" name="email">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cityId">شهر</label>
+                        <input id="cityId" class="form-control" name="city" type="text">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="addressId">آدرس :</label>
+                        <textarea id="addressId" cols="60" rows="2" name="address"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phoneId">شماره تلفن</label>
+                        <input id="phoneId" class="form-control" type="text" name="phone">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="usernameId">نام کاربری</label>
+                        <input id="usernameId" class="form-control" type="text" name="username" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="passwordId">رمز عبور</label>
+                        <input id="passwordId" class="form-control" type="password" name="password" required>
+                    </div>
+
+                    {#                    <div class="form-group">#}
+                    {#                        <label>استان</label>#}
+                    {#                        <input class="form-control" name="state" type="text">#}
+                    {#                    </div>#}
+
+                    <div class="form-group">
+                        <label for="user_idId"> کد ملی </label>
+                        <input id="user_idId" class="form-control" type="text" name="user_id">
+                    </div>
+
+                    {#                    <div class="form-group">#}
+                    {#                        <label>آپلود عکس کاربر</label>#}
+                    {#                        <br>#}
+                    {#                        <input type="file" name="file">#}
+                    {#                    </div>#}
+
+                    <div class="form-group">
+                        <label for="car_nameId">نام ماشین</label>
+                        <input id="car_nameId" class="form-control" type="text" name="car_name" required>
+                    </div>
+
+                    <div class="form-group  ">
+                        <label for="colorId">رنگ</label>
+                        <select id="colorId" class="form-control" name="color">
+                            <option value="black">مشکی</option>
+                            <option value="white">سفید</option>
+                            <option value="red">قرمز</option>
+                            <option value="gray">طوسی</option>
+                            <option value="blue">آبی</option>
+                            <option value="beige">بژ</option>
+                            <option value="brown">قهوه ای</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group ">
+                        <label for="brandId">نام برند</label>
+                        <input id="brandId" class="form-control" type="text" name="brand" required>
+                    </div>
+
+                    <div class="form-group ">
+                        <label for="yearId"> سال ساخت </label>
+                        <input type="date" id="yearId" class="form-control" name="year" required>
+                    </div>
+
+                    <div class="form-group ">
+                        <label for="priceId">قیمت</label>
+                        <input id="priceId" class="form-control" type="text" name="price" required>
+                    </div>
+
+                    <div class="form-group ">
+                        <label for="infoId">توضیحات</label>
+                        <br>
+                        <textarea id="infoId" name="information" cols="60" rows="2" required></textarea>
+                        <br>
+                    </div>
+
+                    {#                    <div class="form-group">#}
+                    {#                        <label for="car_imageId">آپلود عکس ماشین</label>#}
+                    {#                        <br>#}
+                    {#                        <input id="car_imageId" type="file" name="file">#}
+                    {#                    </div>#}
+
+                    <div>
+                        <label for="roleId">نقش خود را انتخاب کنید </label>
+                        <select class="form-control" id="roleId" name="role" placeholder="نقش خود را انتخاب کنید">
+                            <option value="buyer">خریدار</option>
+                            <option value="seller">فروشنده</option>
+                            <option value="renter">اجاره کننده</option>
+                            <option value="lessor">اجاره دهنده</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group ">
+                        <label for="dateId"> تاریخ معامله</label>
+                        <input type="date" id="dateId" class="form-control" name="date" required>
+                    </div>
+
+                    <div class="form-group">
+                        <input class="btn btn-primary" type="submit" value="ثبت">
+                    </div>
+
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+
+    <style>
+        table tr:not(:first-child) {
+            cursor: pointer;
+            transition: all .25s ease-in-out;
+        }
+
+        table tr:not(:first-child):hover {
+            background-color: #ddd;
+        }
+    </style>
+    <div id="data-table1">
+        <table id="deal-table" class="table table-hover table-primary" border="1" style="width: 50%; margin: 0 auto">
+            <thead>
+            <tr>
+
+                <th>نام ماشین</th>
+                <th>رنگ</th>
+                <th>نام برند</th>
+                <th>سال ساخت</th>
+                <th>قیمت</th>
+                <th>توضیحات</th>
+            </tr>
+            </thead>
+
+            <tbody>
+            {% for stuff in stuff_list %}
+                <tr>
+                    <td>{{ stuff.car_name }}</td>
+                    <td>{{ stuff.color }}</td>
+                    <td>{{ stuff.brand }}</td>
+                    <td>{{ stuff.year }}</td>
+                    <td>{{ stuff.price }}</td>
+                    <td>{{ stuff.information }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div><br><br>
+
+
+    <script>
+        var d_table = document.getElementById('deal-table');
+        for (var i = 0; i < d_table.rows.length; i++) {
+            d_table.rows[i].onclick = function () {
+                document.getElementById("car_nameId").value = this.cells[0].innerHTML;
+                document.getElementById("colorId").value = this.cells[1].innerHTML;
+                document.getElementById("brandId").value = this.cells[2].innerHTML;
+                document.getElementById("yearId").value = this.cells[3].innerHTML;
+                document.getElementById("priceId").value = this.cells[4].innerHTML;
+                document.getElementById("infoId").value = this.cells[5].innerHTML;
+            }
+        }
+    </script>
+
+
+
+
+    <div id="data-table2">
+        <table id="user-table" class="table table-hover table-primary" border="1" style="width: 50%; margin: 0 auto">
+            <thead>
+            <tr>
+                <th>نام</th>
+                <th>نام خانوادگی</th>
+                <th>جنسیت</th>
+                <th>تاریخ تولد</th>
+                <th>ایمیل</th>
+                <th>شهر</th>
+                <th>آدرس</th>
+                <th>شماره تلفن</th>
+                <th>نام کاربری</th>
+                <th>رمز عبور</th>
+                <th>کد ملی</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for user in user_list %}
+                <tr>
+                    <td>{{ user.name }}</td>
+                    <td>{{ user.family }}</td>
+                    <td>{{ user.gender }}</td>
+                    <td>{{ user.birth_date }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.city }}</td>
+                    <td>{{ user.address }}</td>
+                    <td>{{ user.phone }}</td>
+                    <td>{{ user.username }}</td>
+                    <td>{{ user.password }}</td>
+                    <td>{{ user.user_id }}</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <script>
+        var u_table = document.getElementById('user-table');
+        for (var i = 0; i < u_table.rows.length; i++) {
+            u_table.rows[i].onclick = function () {
+                document.getElementById("nameId").value = this.cells[0].innerHTML;
+                document.getElementById("familyId").value = this.cells[1].innerHTML;
+                document.getElementById("genderId").value = this.cells[2].innerHTML;
+                document.getElementById("birth_dateId").value = this.cells[3].innerHTML;
+                document.getElementById("emailId").value = this.cells[4].innerHTML;
+                document.getElementById("cityId").value = this.cells[5].innerHTML;
+                document.getElementById("addressId").value = this.cells[6].innerHTML;
+                document.getElementById("phoneId").value = this.cells[7].innerHTML;
+                document.getElementById("usernameId").value = this.cells[8].innerHTML;
+                document.getElementById("passwordId").value = this.cells[9].innerHTML;
+                document.getElementById("user_idId").value = this.cells[10].innerHTML;
+
+            }
+        }
+    </script>
+
+{% endblock %}
+
+

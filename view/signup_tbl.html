@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>sign up table</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+
+
+
+    <style>
+        #data-table {
+            width: 60%;
+            margin: auto;
+        }
+
+        textarea {
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body onload="show_data()">
+<div id="data-table">
+    <table class="table table-hover table-primary">
+        <thead>
+        <tr>
+            <th>نام</th>
+            <th>نام خانوادگی</th>
+            <th>جنسیت</th>
+            <th>تاریخ تولد</th>
+            <th>ایمیل</th>
+            <th>شهر</th>
+            <th>کد ملی</th>
+            <th>شماره تلفن</th>
+            <th>رمز عبور</th>
+            <th>نام کاربری</th>
+            <th>Operartion</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        {% for user in signup_list %}
+            <tr onclick="show_data('user_data')">
+                <td>{{ user.name }}</td>
+                <td>{{ user.family }}</td>
+                <td>{{ user.gender }}</td>
+                <td>{{ user.birth_date }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.city }}</td>
+                <td>{{ user.phone }}</td>
+                <td>{{ user.username }}</td>
+                <td>{{ user.password }}</td>
+                <td>{{ user.user_id }}</td>
+                <td>
+                    <button>Edit <i class="fa fa-edit"></i></button>
+                    <button>Remove <i class="fa fa-remove"></i></button>
+                </td>
+
+
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+<div>
+    <label for="address">آدرس</label> <br>
+    <textarea name="address" id="address" cols="30" rows="2"></textarea>
+</div>
+<script>
+    function show_data(address) {
+        document.getElementById("address").value = address;
+    }
+</script>
+</body>
+</html>

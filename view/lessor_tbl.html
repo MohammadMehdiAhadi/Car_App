@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>lessor table</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <style>
+        #data-table {
+            width: 60%;
+            margin: auto;
+        }
+
+        textarea {
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+<div id="data-table">
+    <table class="table table-hover table-primary">
+        <thead>
+        <tr>
+            <th>نام ماشین</th>
+            <th>نام برند</th>
+            <th>رنگ</th>
+            <th>Operartion</th>
+{#            <th>شهر</th>#}
+{#            <th>سال ساخت</th>#}
+{#            <th>تاریخ اجاره</th>#}
+{#            <th>تاریخ تحویل</th>#}
+{#            <th>قیمت</th>#}
+        </tr>
+        </thead>
+
+        <tbody>
+        {% for less in less_list %}
+            <tr onclick="show_data('aaa')">
+{#                <td>{{ less.id }}</td>#}
+                <td>{{ less.car_name }}</td>
+                <td>{{ less.color }}</td>
+                <td>{{ less.brand }}</td>
+                <td>
+                    <button>Edit <i class="fa fa-edit"></i></button>
+                    <button>Remove <i class="fa fa-remove"></i> </button>
+                </td>
+
+{#                <td>bbb</td>#}
+{#                <td>ttt</td>#}
+{#                <td>kkk</td>#}
+{#                <td>nnn</td>#}
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+<div>
+    <label for="address">آدرس</label> <br>
+    <textarea name="address" id="address" cols="30" rows="2"></textarea> <br><br>
+    <label for="description">توضیحات</label> <br>
+    <textarea name="description" id="description" cols="30" rows="2"></textarea>
+</div>
+<script>
+    function show_data(info) {
+        {#document.getElementById("address").value = address;#}
+        document.getElementById("description").value = info;
+    }
+</script>
+</body>
+</html>
